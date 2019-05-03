@@ -96,13 +96,10 @@ void load_NFA_table()
 			else
 				printf("Enter the transition from state %d with input as epsilon : ",i);
 			scanf("%[^\n]%*c",tab);
-			if(strlen(tab)==0)
-				strcpy(NFAtab[i][j],tab);
-			else
-				NFAtab[i][j]=tab;
+			NFAtab[i][j]=tab;
 			fflush (stdin);
-			//printf("%d %d\n",strlen(tab),strlen(NFAtab[i][j]));
 			strcpy(tab,"");
+			//printf("%d %d\n",strlen(tab),strlen(NFAtab[i][j]));
 			/*fgets(tab,100,stdin);
 			//tab[strlen(tab)-1]="";
 			if(strlen(tab)==1)
@@ -112,12 +109,6 @@ void load_NFA_table()
 			printf("%s", NFAtab[i][j]);
 			printf("%d %d",strlen(tab),strlen(NFAtab[i][j]));*/
 		}
-	for(int i=0;i<N_NFA_states;i++)
-	for(int j=0;j<=N_symbols;j++)
-	{
-		printf("%s %d\n",NFAtab[i][j],strlen(NFAtab[i][j]));
-	}
-	printf("%s\n",NFA_finals);
 	printf("Enter the final states in nfa : ");
 	scanf("%s",NFA_finals);
 	N_DFA_states=0;
